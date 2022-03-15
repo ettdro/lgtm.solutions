@@ -1,7 +1,5 @@
 <template>
-  <div>
-    {{ word }}
-  </div>
+  <h1 class="text-2xl p-4">{{ word }}</h1>
 </template>
 <script>
 export default {
@@ -11,33 +9,15 @@ export default {
   },
   data() {
     return {
-      randomNumber: 0,
-      LOL_BANK: [
-        "lol",
-        "lol2",
-        "lol3",
-        "lol4",
-        "lol5",
-        "lol6",
-        "lol7",
-        "lol8",
-        "lol9",
-      ],
-      TEST_BANK: [
-        "Lets",
-        "Gamer",
-        "Toast",
-        "Yahoo",
-        "Allo",
-        "Jor",
-        "Is",
-        "The",
-      ],
+      L_BANK: ["Let's", "Lots", "Lame", "Lime", "Loaf"],
+      G_BANK: ["Game", "Grind", "Ground", "Grim", "Guard"],
+      T_BANK: ["Together", "Teen", "Tomato", "Transfer", "Turismo"],
+      M_BANK: ["Man", "Mafia", "Morning", "Massive", "Mark"],
     };
   },
   computed: {
     word() {
-      return this.bank[this.randomNumber];
+      return this.bank[this.randomIntFromInterval(0, this.bank.length - 1)];
     },
     bank() {
       const bankName = `${this.wordBank.toUpperCase()}_BANK`;
@@ -48,6 +28,9 @@ export default {
   methods: {
     refreshWord() {
       this.randomNumber = Math.floor(Math.random() * this.bank.length());
+    },
+    randomIntFromInterval(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
     },
   },
 };
