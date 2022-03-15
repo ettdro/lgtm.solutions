@@ -1,0 +1,9 @@
+# Backend
+
+venv/*
+api/__pycache__
+
+
+# Frontend
+lgtm-app/node_modules
+lgtm-app/.vscode
