@@ -19,6 +19,6 @@ Backend is available on 127.0.0.1:5000
 ## For frontend
 
 ```
-npm init
+npm install
 npm run dev
 ```
