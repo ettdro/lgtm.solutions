@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col h-screen justify-center items-center">
     <div class="flex flex-row">
-      <div class="flex flex-row">
+      <div class="flex flex-row" ref="customLGTM">
         <WordSelector :changeWord="shouldChangeWord.l" :wordBank="lBank" />
         <WordSelector :changeWord="shouldChangeWord.g" :wordBank="gBank" />
         <WordSelector :changeWord="shouldChangeWord.t" :wordBank="tBank" />
@@ -39,12 +39,23 @@ export default {
       lBank: ["Let's", "Lots", "Lame", "Lime", "Loaf"],
       gBank: ["Game", "Grind", "Ground", "Grim", "Guard"],
       tBank: ["Together", "Teen", "Tomato", "Transfer", "Turismo"],
-      mBank: ["Man", "Mafia", "Morning", "Massive", "Mark"],
+      mBank: [
+        "Man",
+        "Mafia",
+        "Morning",
+        "Massive",
+        "Mark",
+        "Machine",
+        "Makeup",
+      ],
     };
   },
   methods: {
     copyToClipboard() {
       // Logic to copy the words to clipboard here.
+      const newLineRegex = /(\r\n|\n|\r)/gm;
+      const parsedCurrentText = this.$refs['customLGTM'].innerText.replace(newLineRegex,"").trimEnd();
+      navigator.clipboard.writeText(parsedCurrentText);
     },
     generateNewWords() {
       this.shouldChangeWord.l = !this.shouldChangeWord.l;
