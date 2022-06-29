@@ -1,0 +1,26 @@
+export default {
+    lBank: ["Let's", "Lots", "Lame", "Lime", "Loaf", "Luigi", "Lagoon"],
+    gBank: [
+    "Game",
+    "Grind",
+    "Ground",
+    "Grim",
+    "Guard",
+    "Gamer",
+    "Green",
+    "Great",
+    "Gas",
+    "Guacamole",
+    "Gold",
+    ],
+    tBank: ["Together", "Teen", "Tomato", "Transfer", "Turismo"],
+    mBank: [
+    "Man",
+    "Mafia",
+    "Morning",
+    "Massive",
+    "Mark",
+    "Machine",
+    "Makeup",
+    ],
+}
